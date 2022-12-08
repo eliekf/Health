@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title> Responsive Dashboard </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300;1,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" >
+        <link rel="stylesheet" href="CssProject.css">
+    </head>
+    <body>
+        <!----------------->
+
+        <div class="scrollable" style=" width: 400px;"></div>
+        <!----------------->
+        <div class ="container" >
+            <div class ="navigation">    
+                <ul>
+                    <li>
+                        <a href="#">
+                            <span class="icon"><ion-icon name="fitness-outline"></ion-icon>
+                                <span class="title"><i class="fa fa-h-square"></i>ealth Let</span>   
+                        </a>        
+                    </li>
+                     <li>
+                        <a href="dashboard_patient.html">
+                            <span class="icon"><ion-icon name="stats-chart-outline"></ion-icon>
+                                <span class="title"> Dashboard </span>   
+                        </a>        
+                    </li>
+                     <li>
+                        <a href="availabledrs.html">
+                            <span class="icon"><ion-icon name="git-network-outline"></ion-icon>
+                                <span class="title"> Available Doctors</span>   
+                        </a>        
+                    </li>         
+                    <li>
+                        <a href="appointments-patient.html">
+                            <span class="icon"><ion-icon name="calendar-outline"></ion-icon>
+                                <span class="title"> Appointments </span>   
+                        </a>        
+                    </li>
+
+                     
+                    
+                </ul>    
+              </div>
+              <!-- main -->
+              <div class="main" style="background-color: whitesmoke;">
+                <div class="topbar">
+                    <div class="toggle">
+                        <ion-icon name="menu-outline"></ion-icon>
+                    </div>
+                    <!-- search -->
+                    <div class="search">
+                        <label>
+                            <input type="text" placeholder="Search here" id="search-input">
+                            <ion-icon name="search-outline"></ion-icon>
+                        </label>
+                    </div>
+                    <!-- User Image -->
+                    <div class="User">
+                        <img src="C:\Users\eliek\Desktop\HealthLet Official Website\images\userimg.jpg" width="60px" height="60px">
+                    </div>
+                 </div>
+
+
+                 <div class="details">
+                    <!--order details list--> 
+                    <div class="recentPatients">
+                        <div class="cardHeader">
+                            <h2> Available Doctors </h2>
+                            
+                        </div>
+                        <table style="width: 1200px;">
+                            <thead>
+                                <tr>
+                                    
+                                    <td> Doctor's Name </td>
+                                    <td> Specialization </td>
+                                    <td style="text-align: center;"> Address </td>
+                                    <td > History </td>
+                                    <td>                </td>
+                                </tr>
+                            </thead> 
+                            <tbody>
+                                <tr>
+                                   
+                                   <td style="font-style: italic;"> Dr ELIE CHALOUHY</td>
+                                   <td style="background: linear-gradient(white,rgb(218, 216, 216)); color: #287bff;"> Cardiology </td>
+                                   <td style="text-align: center;"> Hospital Alb </td>
+                                   <td><a href="doctors-history.html" class="btn"> Read More </a></td>
+                                   
+                                </tr>
+                                <br>
+                                <tr></tr>
+                                <tr>
+                                    <td style="font-style: italic;"> Dr KIFAH ALWAN </td>
+                                    <td style="background: linear-gradient(white,rgb(218, 216, 216)) ;color: #287bff;"> Cardiovascular Surgery </td>
+                                    <td style="text-align: center;"> Zgharta  </td>
+                                    <td><a href="doctors-history.html" class="btn" > Read More </a></td>
+                                    
+                                </tr>
+                                <tr>
+                                   <td style="font-style: italic;"> Dr MAHMOUD ASIR </td>
+                                   <td style="background: linear-gradient(white,rgb(218, 216, 216));color: #287bff;"> General Physician </td>
+                                   <td style="text-align: center;"> Haykel Hospital </td>
+                                   <td><a href="doctors-history.html" class="btn" > Read More </a></td>
+                                   
+                                </tr>
+                                <tr>
+                                    <td style="font-style: italic;"> Dr GEORGE DAGHER</td>
+                                    <td style="background: linear-gradient(white,rgb(218, 216, 216));color: #287bff;"> Orthopedic Surgery</td>
+                                    <td style="text-align: center;"> Monla Hospital </td>
+                                    <td><a href="doctors-history.html" class="btn" > Read More </a></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td style="font-style: italic;"> Dr GHASSAN KAHWAJI</td>
+                                    <td style="background: linear-gradient(white,rgb(218, 216, 216));color: #287bff;"> Oto-Rhino-Laryngology</td>
+                                    <td style="text-align: center;"> Zgharta </td>
+                                    <td><a href="doctors-history.html" class="btn" "> Read More </a></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td style="font-style: italic;"> Dr RIAD NASR</td>
+                                    <td style="background: linear-gradient(white,rgb(218, 216, 216));color: #287bff;"> Physiotherapist</td>
+                                    <td style="text-align: center;"> Dahr El-Ain</td>
+                                    <td><a href="doctors-history.html" class="btn"> Read More </a></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td style="font-style: italic;"> Dr WASSIM JREIJ</td>
+                                    <td style="background: linear-gradient(white,rgb(218, 216, 216));color: #287bff;"> Female Sage</td>
+                                    <td style="text-align: center;"> Kousba </td>
+                                    <td><a href="doctors-history.html" class="btn" > Read More </a></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td style="font-style: italic;"> Dr JOSEPH BORJI</td>
+                                    <td style="background: linear-gradient(white,rgb(218, 216, 216));color: #287bff;"> Dentist</td>
+                                    <td style="text-align: center;"> Kfarhazir</td>
+                                    <td><a href="doctors-history.html" class="btn" > Read More </a></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td style="font-style: italic;"> Dr YOUSSEF ANDRAOS</td>
+                                    <td style="background: linear-gradient(white,rgb(218, 216, 216));color: #287bff;"> Surgeon</td>
+                                    <td style="text-align: center;"> Abou Jaoude Hospital</td>
+                                    <td><a href="doctors-history.html" class="btn" > Read More </a></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td style="font-style: italic;"> Dr JOSEPH AWADA</td>
+                                    <td style="background: linear-gradient(white,rgb(218, 216, 216));color: #287bff;"> Gastroenterology</td>
+                                    <td style="text-align: center;"> Tripoli center</td>
+                                    <td><a href="doctors-history.html" class="btn" > Read More </a></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td style="font-style: italic;"> Dr MIRNA CHAWBAH</td>
+                                    <td style="background: linear-gradient(white,rgb(218, 216, 216));color: #287bff;"> Psychiatry</td>
+                                    <td style="text-align: center;"> Kfarsaroun</td>
+                                    <td><a href="doctors-history.html" class="btn" > Read More </a></td>
+                                    
+                                </tr>
+                                
+   
+                            </tbody>
+                        </table>
+                    </div>
+              </div>
+        </div>
+<!---------------------------------------------------------------------------->
+
+<!---------------------------------------------------------------------------->
+        
+
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    setTimeout(function(){
+        $('.loading-area').fadeToggle();
+            }, 1500);
+</script>
+<script> 
+                                        //Menu toggle
+ let toggle = document.querySelector('.toggle');
+ let navigation = document.querySelector('.navigation');
+ let main = document.querySelector('.main');
+                                        
+ toggle.onclick = function(){
+ navigation.classList.toggle('active');
+ main.classList.toggle('active');
+                                        }
+ let list=document.querySelectorAll('.navigation li');//add class in selected item
+        function activeLink(){
+        list.forEach((item) =>
+            item.classList.remove('hovered'));
+            this.classList.add('hovered');
+                 }
+                list.forEach((item) =>
+                  item.addEventListener('mouseover', activeLink));
+</script>
+ </body>                 
+                                    
+ </html>                                    

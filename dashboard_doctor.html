@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title> Responsive Dashboard </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300;1,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" >
+        <link rel="stylesheet" href="CssProject.css">
+        <link rel="stylesheet"  type="text/css" href="loading.css">
+
+
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+var data = google.visualization.arrayToDataTable([
+  ['Month', 'Consultations', 'Patients'],
+  ['January', 35, 5],
+  ['February', 20, 15],
+  ['March',  3, 30],
+  ['April', 48, 18],
+  ['May', 20 , 10 ],
+  ['June', 35 ,30 ],
+  ['July', 55 ,40 ]
+]);
+
+var options = {
+  title: 'Activity',
+  curveType: 'function',
+  legend: { position: 'bottom' }
+};
+
+var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+chart.draw(data, options);
+}
+</script>
+<!------------------------->
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+var data = google.visualization.arrayToDataTable([
+  ['Year', 'Gains', 'Loss'],
+  ['2018',  100,      500],
+  ['2019',  500,      460],
+  ['2020',  1000,       300],
+  ['2021',  2000,      200]
+]);
+
+var options = {
+  title: 'Online Performance',
+  hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
+  vAxis: {minValue: 0}
+};
+
+var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+chart.draw(data, options);
+}
+</script>
+<!------------------------>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+google.charts.load("current", {packages:["corechart"]});
+google.charts.setOnLoadCallback(drawChart);
+function drawChart() {
+var data = google.visualization.arrayToDataTable([
+  ['Task', 'Hours per Day'],
+  ['Diabetis', 7],
+  ['Flu', 7],
+  ['Covid', 21]
+]);
+
+var options = {
+  title: 'Diseases Report',
+  pieHole: 0.4,
+};
+
+var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+chart.draw(data, options);
+}
+</script>
+<!------------------------------>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+
+ var data = google.visualization.arrayToDataTable([
+   ['Task', 'Hours per Day'],
+   ['Infectous diseas',     5],
+   ['Paediatric',      2],
+   ['Hepatology',  2]
+ ]);
+
+ var options = {
+   title: 'Latest Report'
+ };
+
+ var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+ chart.draw(data, options);
+}
+</script>
+    </head>
+    <body>
+        <!----------------->
+
+        <div class="loading-area">
+            <span class="loader"> Loading...</span>
+            <span class="load_anim1"></span>
+            <span class="load_anim2"></span>
+        </div>
+        <div class="scrollable" style=" width: 400px;"></div>
+        <!----------------->
+        <div class ="container" >
+            <div class ="navigation">    
+                <ul>
+                    <li>
+                        <a href="#">
+                            <span class="icon"><ion-icon name="fitness-outline"></ion-icon>
+                                <span class="title">Health Let</span>   
+                        </a>        
+                    </li>
+                    <li>
+                        <a href="dashboard_doctor.html">
+                            <span class="icon"><ion-icon name="stats-chart-outline"></ion-icon>
+                                <span class="title"> View Patients </span>   
+                        </a>        
+                    </li>
+                     
+                    
+                     
+                     <li>
+                        <a href="addpatient.html">
+                            <span class="icon"><ion-icon name="person-add-outline"></ion-icon>
+                                <span class="title"> Add Patient </span>   
+                        </a>        
+                    </li>
+                    <li>
+                        <a href="SignUp.html">
+                            <span class="icon"><ion-icon name="log-out-outline"></ion-icon>
+                                <span class="title"> Log out </span>   
+                        </a>        
+                    </li>
+                    
+                </ul>    
+              </div>
+              <!-- main -->
+              <div class="main">
+                <div class="topbar">
+                    <div class="toggle">
+                        <ion-icon name="menu-outline"></ion-icon>
+                    </div>
+                    <!-- search -->
+                    <div class="search">
+                        <label>
+                            <input type="text" placeholder="Search here">
+                            <ion-icon name="search-outline"></ion-icon>
+                        </label>
+                    </div>
+                    <!-- User Image -->
+                    <div class="User">
+                        <img src="C:\Users\eliek\Desktop\HealthLet Official Website\images\666.jpg" width="60px" height="60px">
+                    </div>
+                 </div><br>
+                 <div class="intro" style="background-color: whitesmoke;">
+                    <div class="intro-title">
+                        Welcome home, 
+                        <span>    Dr Elie Chalouhy </span>
+                    
+                    </div>
+                    
+                    <div class="intro-subtitle">
+                        Here are your important tasks and updates.<br>
+                        You can view your patients and set your appointments.
+                    </div><br><br>
+                    
+                <div class="cardBox">
+                    <div class="card">
+                        <div>
+                            <div class="numbers"> 11 </div>
+                            <div class="cardName"> Total Patients</div>
+                        </div>
+                     <div class="iconBox">
+                     <ion-icon name="accessibility-outline"></ion-icon>
+                     </div>
+                    </div>
+                    <div class="card">
+                        <div>
+                            <div class="numbers"> 5 </div>
+                            <div class="cardName"> Emergency Cases </div>
+                        </div>
+                     <div class="iconBox">
+                        <ion-icon name="bag-add-outline"></ion-icon>
+                     </div>
+                    </div>
+                    <div class="card">
+                        <div>
+                            <div class="numbers"> 3 </div>
+                            <div class="cardName"> Appointments</div>
+                        </div>
+                     <div class="iconBox">
+                        <ion-icon name="person-outline"></ion-icon>
+                     </div>
+                    </div>
+                    <div class="card">
+                        <div>
+                            <div class="numbers"> 5 </div>
+                            <div class="cardName"> Alerts </div>
+                        </div>
+                     <div class="iconBox">
+                        <ion-icon name="warning-outline"></ion-icon>
+                     </div>
+                    </div>
+                    <div class="card">
+                        <div>
+                            <div class="numbers"> 3 </div>
+                            <div class="cardName"> Active Conversations </div>
+                        </div>
+                     <div class="iconBox">
+                        <ion-icon name="chatbubbles-outline"></ion-icon>
+                     </div>
+                    </div>
+                    <div class="card">
+                        <div>
+                            <div class="numbers"> 14 </div>
+                            <div class="cardName"> Laboratory Results </div>
+                        </div>
+                     <div class="iconBox">
+                        <ion-icon name="flask-outline"></ion-icon>
+                     </div>
+                    </div>
+                    <div class="card">
+                        <div>
+                            <div class="numbers"> 4 </div>
+                            <div class="cardName"> Reports Archive</div>
+                        </div>
+                     <div class="iconBox">
+                        <ion-icon name="document-attach-outline"></ion-icon>
+                     </div>
+                    </div>
+                    <div class="card">
+                        <div>
+                            <div class="numbers"> 3 </div>
+                            <div class="cardName"> Payments </div>
+                        </div>
+                     <div class="iconBox">
+                        <ion-icon name="wallet-outline"></ion-icon>
+                     </div>
+                    </div>
+              </div>
+
+              <div class="details">
+                <!--order details list--> 
+                <div class="recentPatients">
+                    <div class="cardHeader">
+                        <h2> Current Patients </h2>
+                        <a href="#" class="btn"> View All </a>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <td> Patient Name </td>
+                                <td> Date Of Birth </td>
+                                <td> Status </td>
+                                <td>  </td>
+                            </tr>
+                        </thead> 
+                        <tbody>
+                            <tr>
+                               <td> Latest Patient </td>
+                               <td> 23/08/2000 </td>
+                               <td><span class="status active"> Active </span></td>
+                               <td><a href="dashboard_new_patient.html" class="btn" style="background: #287bff;"> View Profile </a></td>
+                            </tr>
+                            <tr>
+                               <td> Elie E. Kfoury </td>
+                               <td> 23/08/1999 </td>
+                               <td><span class="status active"> Active </span></td>
+                               <td><a href="dashboard_patient.html" class="btn" style="background: #287bff;"> View Profile </a></td>
+                            </tr>
+                            <tr>
+                               <td>Moussa S. Nasr </td>
+                               <td> 29/08/1998 </td>
+                               <td><span class="status pending"> Pending </span></td>
+                               <td><a href="#" class="btn" style="background: #287bff;"> View Profile </a></td>
+                            </tr>
+                            <tr>
+                               <td> Angy G. Nehme </td>
+                               <td> 1/07/1998 </td>
+                               <td><span class="status pending"> Pending </span></td>
+                               <td><a href="#" class="btn" style="background: #287bff;"> View Profile </a></td>
+                            </tr>
+                            <tr>
+                               <td> Naji R. Nasr </td>
+                               <td> 5/04/2002 </td>
+                               <td><span class="status pending"> Pending </span></td>
+                               <td><a href="#" class="btn" style="background: #287bff;"> View Profile </a></td>
+                            </tr>
+                            <tr>
+                               <td> Cynthia H. Metlej </td>
+                               <td> 10/06/2000 </td>
+                               <td><span class="status pending"> Pending </span></td>
+                               <td><a href="#" class="btn" style="background: #287bff;"> View Profile </a></td>
+                            </tr>
+                            <tr>
+                               <td> Jessica S. Sabbagh </td>
+                               <td> 06/06/1998 </td>
+                               <td><span class="status pending"> Pending </span></td>
+                               <td><a href="#" class="btn" style="background: #287bff;"> View Profile </a></td>
+                            </tr>
+                            <tr>
+                               <td> Antonella N. Issa </td>
+                               <td> 12/09/1999 </td>
+                               <td><span class="status pending"> Pending </span></td>
+                               <td><a href="#" class="btn" style="background: #287bff;"> View Profile </a></td>
+                            </tr>
+                            <tr>
+                               <td> Elias S. Mansour</td>
+                               <td> 2/09/1992 </td>
+                               <td><span class="status pending"> Pending </span></td>
+                               <td><a href="#" class="btn" style="background: #287bff;"> View Profile </a></td>
+                            </tr>
+                            <tr>
+                               <td> Mounir S. Dani </td>
+                               <td> 22/08/1999 </td>
+                               <td><span class="status inprogress"> In progress </span></td>
+                               <td><a href="#" class="btn" style="background: #287bff;"> View Profile </a></td>
+                            </tr>
+                            <tr>
+                               <td> Johnny J. Ghantous </td>
+                               <td> 6/7/1995 </td>
+                               <td><span class="status inprogress"> In progress </span></td>
+                               <td><a href="#" class="btn" style="background: #287bff;"> View Profile </a></td>
+                            </tr>
+                            
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="recentCustomers">
+                    <div class="cardHeader">
+                        <h2> Edit Patients </h2>
+                    </div>
+                    <table>
+                        <tr>
+                            <td width="60px"><div class="imgBx"><img src="C:\Users\eliek\Desktop\HealthLet Official Website\images\image1.jpg"></div></td>
+                            <td><h4> Latest Patient <br> <span> Lebanon </span> </h4></td>
+                            <td><a href="editpatient.html" class="btn" style="background: #287bff;"> Edit Profile </a></td>
+                        </tr>
+                        <tr>
+                           <td width="60px"><div class="imgBx"><img src="C:\Users\eliek\Desktop\HealthLet Official Website\images\image2.jpg"></div></td>
+                           <td><h4> Mira <br> <span> Lebanon </span> </h4></td>
+                           <td><span class="status inprogress"> In progress </span></td>
+                       </tr>
+                       <tr>
+                           <td width="60px"><div class="imgBx"><img src="C:\Users\eliek\Desktop\HealthLet Official Website\images\image3.jpg"></div></td>
+                           <td><h4> Randa <br> <span> Lebanon </span> </h4></td>
+                           <td><span class="status inprogress"> In progress </span></td>
+                       </tr>
+                       <tr>
+                           <td width="60px"><div class="imgBx"><img src="C:\Users\eliek\Desktop\HealthLet Official Website\images\image4.jpg"></div></td>
+                           <td><h4> Sara <br> <span> Lebanon </span> </h4></td>
+                           <td><span class="status inprogress"> In progress </span></td>
+                       </tr>
+                       <tr>
+                           <td width="60px"><div class="imgBx"><img src="C:\Users\eliek\Desktop\HealthLet Official Website\images\image5.jpg"></div></td>
+                           <td><h4> Pamela <br> <span> Lebanon </span> </h4></td>
+                           <td><span class="status inprogress"> In progress </span></td>
+                       </tr>
+                       <tr>
+                           <td width="60px"><div class="imgBx"><img src="C:\Users\eliek\Desktop\HealthLet Official Website\images\image6.jpg"></div></td>
+                           <td><h4> Misha <br> <span> Lebanon </span> </h4></td>
+                           <td><span class="status inprogress"> In progress </span></td>
+                       </tr>
+                       <tr>
+                           <td width="60px"><div class="imgBx"><img src="C:\Users\eliek\Desktop\HealthLet Official Website\images\image7.jpg"></div></td>
+                           <td><h4> Abood <br> <span> Lebanon </span> </h4></td>
+                           <td><span class="status inprogress"> In progress </span></td>
+                       </tr>
+                       <tr>
+                           <td width="60px"><div class="imgBx"><img src="C:\Users\eliek\Desktop\HealthLet Official Website\images\image8.jpg"></div></td>
+                           <td><h4> Karine <br> <span> Lebanon </span> </h4></td>
+                           <td><span class="status inprogress"> In progress </span></td>
+                       </tr>
+                    </table>
+                </div>
+                <div id="curve_chart" style="display: grid; height: 300px; width: 800px; box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08); border-radius: 20px;"></div>
+                <div id="donutchart" style="width: 400px; height: 300px; box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08); border-radius: 20px;"></div>
+                <div id="chart_div" style="width: 800px; height: 300px; box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08); border-radius: 20px;"></div>
+                <div id="piechart" style="width: 400px; height: 300px; box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08); border-radius: 20px;"></div>
+          </div>
+    </div>
+              </div>
+        </div>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+     setTimeout(function(){
+        $('.loading-area').fadeToggle();
+           }, 1500);
+</script>
+<script> 
+                    //Menu toggle
+    let toggle = document.querySelector('.toggle');
+    let navigation = document.querySelector('.navigation');
+    let main = document.querySelector('.main');
+                    
+    toggle.onclick = function(){
+    navigation.classList.toggle('active');
+    main.classList.toggle('active');
+                    }
+    let list=document.querySelectorAll('.navigation li');//add class in selected item
+                    function activeLink(){
+                        list.forEach((item) =>
+                        item.classList.remove('hovered'));
+                        this.classList.add('hovered');
+                    }
+                    list.forEach((item) =>
+                    item.addEventListener('mouseover', activeLink));
+                  </script>
+                </body>                 
+                
+            </html>                     
+  

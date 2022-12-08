@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="UTF-8">
+        <title> Sign In </title>
+        <link rel="stylesheet" href="signin.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300;1,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" >
+        <link rel="stylesheet"  type="text/css" href="loading.css">
+        <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>   
+
+    </head>
+  <body>
+
+          <!------------Loading area appearance---------------->
+          <div class="loading-area">
+          <span class="loader"> Loading...</span>
+          <span class="load_anim1"></span>
+          <span class="load_anim2"></span>
+          </div>
+          <!------------Sign in and sign up section------------>
+          <div class="cont">
+          <div class="forms-cont">
+          <div class="signin-signup">
+          <!------------- Sign In section --------------------->
+          <form id="signin-form" class="sign-in-form">
+          <h2 class="title"> Sign in</h2>
+
+          <!----------------- Sign in Form -------------------->
+          <div class="input-field">
+          <i class="fa fa-mobile"></i>
+          <input type="tel" placeholder="Phone Number" id="mail"  title="Must contain only numbers" required>
+          </div>
+
+          <div class="input-field">
+          <i class="fa fa-key"></i>
+          <input type="password" placeholder="Password" id="pass" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+          title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"  required>
+          </div><br>
+
+          <div class="form-wrapper">
+          <select name="role" id="Trole" class="form-control" required>
+          <option value="" disabled selected style="font-family: 'Popins, sans serif';"> Sign in as </option>
+          <option value="patient"> Patient </option>
+          <option value="doctor"> Doctor </option>
+          </select>
+          </div>
+
+          <button class="btn solid" type="submit" id="login"> Login</button>
+          <div>
+          <a href="forgot.html" style="font-size: small; color: #444; text-decoration: none;"> Forgot Password?</a>
+          </div>
+          </form>
+
+          <!---------Registration Form---------------------->
+        
+          <form id="signup-form" class="sign-up-form" style="display: block;" method="POST">
+          <div class="input-field">
+          <i class="fas fa-user"></i>
+          <input type="text" placeholder="Full Name" id="fullname" minlength="8"  required>
+          </div>
+          
+          <div class="input-field">
+          <i class="fas fa-user" ></i>
+          <input  type="text" placeholder="Username" id="username" minlength="5"  required>
+          </div>
+
+          <div class="input-field">
+          <i class="fa fa-envelope-o"></i>
+          <input  type="email" placeholder="Email" id="email" required>
+          </div>
+
+          <div class="input-field">
+          <i class="fa fa-key"></i>
+          <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+          title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" placeholder="Password" id="password"  required>
+          </div>
+          
+          <div class="input-field">
+          <i class="fa fa-mobile"></i>
+          <input type="text"  id="phonenumber" name="phonenumber"    required>
+          </div>
+          <div class="input-field">
+          <i class="fa fa-calendar-o"></i>
+          <input type="date" placeholder="Date of Birth" id="birth" required>
+          </div>
+          <div class="input-field">
+          <i class="fa fa-neuter"></i>
+          <select name="gender" id="gender" required>
+          <option value="" disabled selected> Gender </option>
+          <option value="male"> Male </option>
+          <option value="female"> Female </option>
+          </select>
+          </div>
+
+          <div class="input-field">
+          <i class="fa fa-heartbeat"></i>
+          <select name="gender" id="role"  required>
+          <option value="" disabled selected> Role </option>
+          <option value="patient"> Patient </option>
+          <option value="doctor"> Doctor </option>
+          </select>
+          </div>
+          <div>
+          <button class="btn solid" id="regbtn" type="submit" > Register </button>
+          </div>
+          </form>
+          </div>
+          </div>
+
+          <!-- Left and right panels -->
+          <div class="panels-cont">
+          <div class="panel left-panel">
+          <div class="content">
+          <h3> New here? </h3>
+          <p> You are where you need to be. Just take a deep breath and become one of our members</p>
+          <button class="btn transparent" id="sign-up-btn"> Sign up</button>
+          </div>
+          <img src="img/signin.svg" class="image">
+          </div>
+
+          <div class="panel right-panel">
+          <div class="content">
+          <h3> One of us? </h3>
+          <p> You are where you need to be. Go and Sign in</p>
+          <button class="btn transparent" id="sign-in-btn"> Sign in</button>
+          </div>
+          <img src="img/signup.svg" class="image" alt="">
+          </div>
+          </div>
+          </div>
+
+          <!-- Script code for loading -->
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+          <!-- loading animation appearance -->
+          <script>
+          setTimeout(function(){
+          $('.loading-area').fadeToggle(); }, 1500);
+          </script>
+
+         <!-- Firebase connection -->
+         <script type="module">
+         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js";
+         const firebaseConfig = {
+         apiKey: "AIzaSyBtMZ4x65bE7lUYnEDKsr1KXCkXhHXbE0E",
+         authDomain: "healthlet-2021.firebaseapp.com",
+         databaseURL: "https://healthlet-2021-default-rtdb.europe-west1.firebasedatabase.app",
+         projectId: "healthlet-2021",
+         storageBucket: "healthlet-2021.appspot.com",
+         messagingSenderId: "75076174872",
+         appId: "1:75076174872:web:c6e180e11ba8cf12edef6d",
+         measurementId: "G-24F01QE4KL"
+         };
+  
+         // Initialize Firebase
+         const app = initializeApp(firebaseConfig);
+         import {getDatabase, ref, set, onValue, get,child} from "https://www.gstatic.com/firebasejs/9.6.0/firebase-database.js";
+         const db = getDatabase();
+
+         // References
+         var form = document.getElementById("signup-form");
+         var fName = document.getElementById("fullname");
+         var email = document.getElementById("email");
+         var password = document.getElementById("password");
+         var uName = document.getElementById("username");
+         var date = document.getElementById("birth");
+         var phoneNo = document.getElementById("phonenumber");
+         var role = document.getElementById("role");
+         var gender = document.getElementById("gender");
+         const regBtn = document.getElementById("regbtn");
+
+        //  _phoneNo = phoneNo.value;
+        //  if(_phoneNo.charAt('0').equals('0')){
+        //      _phoneNo = _phoneNo.subString('1');
+        //  }
+
+         //Insertion of data
+         function writeUserData() {
+         set(ref(db, "All_Users/" + phoneNo.value), {
+         fName: fName.value,
+         uName: uName.value,
+         email: email.value,
+         password: password.value,
+         date: date.value,
+         phoneNo: phoneNo.value,
+         role: role.value,
+         gender: gender.value
+         }).then(() => {
+         alert("Data stored successfully");
+         setAction();
+         }).catch((err) => {
+         alert("Unsuccessfull, error "+err);  
+         });
+         }
+
+         function setUserData() {
+         set(ref(db, "patient/" + phoneNo.value), {
+         fName: fName.value,
+         uName: uName.value,
+         email: email.value,
+         password: password.value,
+         date: date.value,
+         phoneNo: phoneNo.value,
+         role: role.value,
+         gender: gender.value
+         });}
+  
+         function setAction(){
+         if (role.value == "patient" ){
+            window.localStorage.setItem("phoneNo",phoneNo.value);
+            document.location = "dashboard_new_patient.html";
+         
+    
+         } else if (role.value == "doctor"){
+         document.location = "signup_doctor.html";
+         }
+         }
+         form.addEventListener('submit',(event)=>{
+         event.preventDefault();
+         setUserData();
+         writeUserData();
+         });
+
+         </script>
+         <script >
+          
+         //  SignIn script
+         var phoneNo = document.getElementById("mail");
+         var passw = document.getElementById("pass");
+         var roles = document.getElementById("Trole");
+         var form = document.getElementById("signin-form");
+
+         function select(){
+         if (roles.value == "patient" ){
+            window.localStorage.setItem("phoneNo",phoneNo.value);
+         document.location = "dashboard_new_patient.html";
+    
+         } else if (roles.value == "doctor"){
+         document.location = "dashboard_new_doctor.html";
+         }
+         }
+         form.addEventListener('submit', (event)=>{
+         event.preventDefault();
+         select();
+         }); 
+         </script>
+
+  </body>
+         <script>
+  
+         const phoneInputField = document.querySelector("#phonenumber");
+         const phoneInput = window.intlTelInput(phoneInputField, {
+         utilsScript:
+         "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+         });
+         </script>
+         <script src="signup.js"></script>
+</html>

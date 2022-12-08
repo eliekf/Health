@@ -1,0 +1,688 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap'); 
+html {
+    scroll-behavior: smooth;
+  }
+  ::-webkit-scrollbar{
+    width: 15px;
+  }
+  ::-webkit-scrollbar-track{
+    box-shadow: inset 0 0 5px #ddd;
+    border-radius: 15px;
+  }
+  ::-webkit-scrollbar-thumb{
+    background: linear-gradient(#287bff,#76a9fc, #287bff);
+    border-radius: 15px;
+  }
+*
+{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Ubunto' , sans-serif;
+    font-size: 1em;
+}   
+:root
+{
+    --blue: #287bff;
+    --white: #fff;
+    --grey: #f5f5f5;
+    --black1: #222;
+    --black2: #999;
+}
+body
+{
+    min-height: 10vh;
+    overflow-x: hidden;
+}
+--lottie-player-toolbar-background-color:default
+.container
+{
+    position: relative;
+    width: 100%;
+}
+.navigation
+{
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background: var(--blue);
+    border-left: 10px solid var(--blue);
+    transition: 0.5s;
+    overflow: hidden;
+}
+.navigation.active
+{
+    width: 80px;
+}
+.navigation ul
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.navigation ul li
+{
+    position: relative;
+    width: 100%;
+    list-style: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+.navigation ul li:hover,
+.navigation ul li.hovered
+{
+    background: var(--white);
+}
+.navigation ul li:nth-child(1)
+{
+    margin-bottom: 40px;
+    pointer-events: none;
+}
+.navigation ul li a
+{
+    position: relative;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: var(--white);
+}
+.navigation ul li:hover a,
+.navigation ul li.hovered a
+{
+    color: var(--blue);
+}
+.navigation ul li a .icon
+{
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    margin-bottom: 5px;
+    min-width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    
+}
+.navigation ul li a .icon ion-icon
+{
+    font-size: 1.75em;
+    vertical-align: middle;
+}
+.navigation ul li a .title
+{
+    position: absolute;
+    margin-left: 17px;
+    padding: 0 10px;
+    min-width: 60px;
+    line-height: 64px;
+    text-align: center;
+    white-space: nowrap;
+     
+}
+
+/* curve outside*/
+.navigation ul li:hover a::before,
+.navigation ul li.hovered a::before
+{
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: 35px 35px 0 10px var(--white);
+    pointer-events: none;
+}
+.navigation ul li:hover a::after,
+.navigation ul li.hovered a::after
+{
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: 35px -35px 0 10px var(--white);
+    pointer-events: none;
+}
+.main
+{
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    background: var(--white);
+    transition: 0.5s;
+}
+.main.active
+{
+    width: calc(100% - 80px);
+    left: 80px;
+    
+    
+}
+.topbar
+{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+.toggle
+{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5em;
+    cursor: pointer;
+   
+}
+.search
+{
+    position: relative;
+    width: 400px;
+    margin: 0 10px;
+}
+.search label
+{
+    position: relative;
+    width: 100%;
+}
+.search label input
+{
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    padding-left: 35px;
+    font-size: 15px;
+    outline: none;
+    border: 1px solid var(--black2);
+}
+.search label ion-icon
+{
+    position: absolute;
+    top: 0;
+    left: 10px;
+    font-size: 1.2em;
+}
+.User
+{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+.User img
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.intro-title{
+    padding-top: 30px;
+    padding-left: 50px;
+    font-size: 2.8rem;
+    color: #7a7d86;
+    font-weight: 300;
+    letter-spacing: -.5px;
+    padding-bottom: 10px;
+}
+.intro-title span{
+    color: #287bff;
+    font-weight: 700;
+    font-size: 3.8rem;
+    
+}
+.intro-subtitle{
+    padding-left: 50px;
+    font-size: 1.1rem;
+    color: #b2b5c0;
+    font-weight: 300;
+    font-style: italic;
+}
+.patient-info{
+    display: flex;
+    width: 100%;
+}
+
+.patient-info-thumb{
+    text-align: center;
+    padding-left: 30px;
+    
+}
+/* .profile-pic-div{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid grey;
+}
+
+#photo{
+    height: 100%;
+    width: 100%;
+}
+
+#file{
+    display: none;
+}
+
+#uploadBtn{
+    height: 40px;
+    width: 100%;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    color: wheat;
+    line-height: 30px;
+    font-family: sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    display: none;
+} */
+.patient-info-thumb  img{
+    align-items: center;
+    outline: 3px dashed #0984e3;
+    outline-offset: 3px;
+    border-radius: 50%;
+    width: 150px; 
+ }
+.patient-info-row{
+    width: 100%;
+    display: flex;
+    color: #7a7d86;
+    padding-bottom: 10px;
+    padding-right: 30px;
+    flex-wrap: wrap;
+}
+.patient-info-col{
+    width: 100%;
+    
+}
+.patient-info-col span{
+    font-weight: 700;
+    color: #3a3e48;
+}
+.cardBox
+{
+    position: relative;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 30px;
+    padding-left: 50px;
+}
+.cardBox .card
+{
+    position: relative;
+    background: var(--white);
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.062);
+}
+.cardBox .card .numbers
+{
+    position: relative;
+    font-weight: 500;
+    font-size: 2.5em;
+    color: var(--blue);
+}
+.cardBox .card .cardName
+{
+    color: var(--black1);
+    font-size: 1.1em;
+    margin-top: 5px;
+}
+.cardBox .card .cardName input{
+    width: 400px;
+    border: none;
+    border-bottom: 1px solid #287bff;
+}
+.cardBox .card .iconBox
+{
+    font-size: 2.5em;
+    color: var(--black1);
+}
+.cardBox .card:hover
+{
+    background: var(--blue) ;
+}
+.cardBox .card:hover .numbers,
+.cardBox .card:hover .cardName,
+.cardBox .card:hover .iconBox
+{
+    color: var(--white);
+}
+.details
+{
+    position: relative;
+    width: 1200px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 30px;
+    /*margin-top: 10px;*/
+}
+.details .recentPatients
+{
+    position: relative;
+    display: grid;
+    min-height: 500px;
+    background: var(--white);
+    padding: 20px;
+    box-shadow: 0 7px 25px rgb(203, 217, 241);
+    border-radius: 20px;
+}
+.cardHeader
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.cardHeader h2
+{
+    font-weight: 600;
+    color: var(--blue);
+}
+.btn
+{
+    position: relative;
+    padding: 5px 10px;
+    background: var(--blue);
+    text-decoration: none;
+    color: var(--white);
+    border-radius: 6px;
+}
+.details table
+{
+    width: 100%;
+    margin-top: 10px;
+}
+.details table thead td
+{
+    font-weight: 600;
+}
+.details .recentPatients table tr
+{
+    color: var(--black1);
+    border-bottom: 1px solid rgba(0, 0, 0, 1);
+}
+.details .recentPatients table tr:last-child
+{
+    border-bottom: none;
+}
+.details .recentPatients table tbody tr:hover
+{
+   background: var(--blue);
+   color: var(--white); 
+}
+.details .recentPatients table tr td
+{
+    padding: 10px;
+}
+
+.status.active
+{
+    padding: 2px 4px;
+    background: #8de02c;
+    color: var(--white);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+.status.pending
+{
+    padding: 2px 4px;
+    background: #f9ca3f;
+    color: var(--white);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+.status.inprogress
+{
+    padding: 2px 4px;
+    background: #db5959;
+    color: var(--white);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+.recentCustomers
+{
+    position: relative;
+    display: grid;
+    min-height: 500px;
+    padding: 20px;
+    background: var(--white);
+    box-shadow: 0 7px 25px rgb(203, 217, 241);
+    border-radius: 20px;
+}
+.recentCustomers .imgBx
+{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.recentCustomers .imgBx img
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.recentCustomers table tr td
+{
+    padding: 12px 10px ;
+}
+.recentCustomers table tr td h4
+{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2em;
+}
+.recentCustomers table tr td h4 span
+{
+    font-size: 14px;
+    color: var(--black2);
+}
+.recentCustomers table tr:hover
+{
+    background: var(--blue);
+    color: var(--white);
+}
+.recentCustomers table tr:hover td h4 span
+{
+    color: var(--white);
+}
+/* .form-upload{
+    width: 100%;
+    height: 150px;
+    background-color: #f7f8fa;
+    cursor: pointer;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../Infos/images-removebg-preview.png');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 60%;
+    border-radius: 20%;
+}
+.form-upload-message{
+    font-size: 1rem;
+    color: #333;
+    padding-top: 160px;
+} */
+.drop-zone {
+    max-width: 200px;
+    height: 200px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    cursor: pointer;
+    color: #cccccc;
+    border: 4px dashed #287bff;
+    border-radius: 50%;
+  }
+  
+  .drop-zone--over {
+    border-style: solid;
+  }
+  
+  
+  
+  .drop-zone__thumb {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #cccccc;
+    background-size: cover;
+    position: relative;
+  }
+  
+  .drop-zone__thumb::after {
+    content: attr(data-label);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 5px 0;
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.75);
+    font-size: 14px;
+    text-align: center;
+  }
+ 
+  
+@media (max-width:991px)
+{
+    .navigation
+    {
+        left: -300px;
+    }
+    .navigation.active
+    {
+        width: 300px;
+        left: 0;
+    }
+    .main
+    {
+        width: 100%;
+        left: 0;
+    }
+    .main.active
+    {
+        left: 300px;
+    }
+    .cardBox
+    {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media (max-width: 768px)
+{
+    .details
+    {
+        grid-template-columns: repeat(1,1fr);
+    }
+    .recentPatients
+    {
+        overflow-x: auto;
+    }
+    .status.inprogress
+    {
+        white-space: nowrap;
+    }
+}
+@media (max-width: 480px)
+{
+    .cardBox
+    {
+        grid-template-columns: repeat(1,1fr);
+    }
+    .cardHeader h2 
+    {
+        font-size: 20px;
+    }
+    .User
+    {
+        min-width: 40px;
+    }
+    .navigation
+    {
+        width: 100%;
+        left: -100%;
+        z-index: 1000;
+    }
+    .navigation.active
+    {
+        width: 100%;
+        left: 0;
+    }
+    .toggle
+    {
+        z-index: 10001;
+    }
+    .main.active .toggle
+    {
+        position: fixed;
+        right: 0;
+        left: initial;
+        color: var(--white);
+    }
+}
+.fname
+{
+    padding: 15px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-family:serif;
+    color:var(--black);
+}
+.fname2
+{
+    
+    width: 98%;
+    height: 25px;
+    padding: 5px 1px;
+    flex-wrap: wrap;
+    font-size: 1.2rem;
+    font-family: 'Times New Roman', Times, serif;
+    border-color: 1px solid #e5e7ee;
+}
+/* Add a patient*/
+
+
